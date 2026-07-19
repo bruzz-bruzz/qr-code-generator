@@ -3,7 +3,7 @@ import {useState} from 'react'
 import Html5QrcodePlugin from './Qrcodescanner'
 export default function Scanqrcode(){
     const [text,setText] = useState('')
-    function onNewScanResult(decodedText:string,decodedeResult:any){
+    function onNewScanResult(decodedText:string){
         setText(decodedText)
     }
     return (

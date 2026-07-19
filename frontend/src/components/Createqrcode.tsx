@@ -7,7 +7,6 @@ import html2canvas from 'html2canvas'
 import checkSVG from '../assets/check.svg'
 export default function Creqteqrcode(){
   const codeRef = useRef<HTMLDivElement | null>(null)
-  const [toast,setToast] = useState<{ok:boolean,msg:string}>({ok:false,msg:''})
   const [text,setText] = useState('')
   const [create,setCreate] = useState(false)
   const [copied,setCopied] = useState(false)
@@ -24,9 +23,7 @@ export default function Creqteqrcode(){
       }
       const clipboardItem = new ClipboardItem({ 'image/png': blob })
       await navigator.clipboard.write([clipboardItem])
-      setToast({msg:'Copied!',ok:true})
     }catch(err){
-      setToast({msg:'An error occurred',ok:false})
     }
   }
   async function handleDownload(){
@@ -38,9 +35,7 @@ export default function Creqteqrcode(){
       downloadLink.href = dataURL
       downloadLink.download = 'QRCode.png'
       downloadLink.click()
-      setToast({msg:'Downloaded!',ok:true})
     }catch(err){
-      setToast({msg:'An error occurred',ok:false})
     }
   }
   return (
