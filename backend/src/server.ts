@@ -6,6 +6,7 @@ import qrCode from './routes/Qrcode'
 const app = express()
 const rateLimiter = rateLimit({
     windowMs:60 * 1000,
+    max:60,
     message:"Too many requests. Try again later",
     statusCode:429
 })
