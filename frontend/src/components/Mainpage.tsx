@@ -20,7 +20,7 @@ export default function Mainpage(){
                 {page === 'create' && <Createqrcode />}
                 {page === 'scan' && <Scanqrcode />}
             </div>
-            <Github repo="qr-code-generator" apiLink="https://api.qr-code-generator.com/docs" />
+            <Github repo="qr-code-generator" apiLink="https://github.com/bruzz-bruzz/qr-code-generator/blob/main/backend/README_API.md" />
         </div>
     )
 }
